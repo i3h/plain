@@ -2,13 +2,13 @@
 
 <section id="content" class="page-content">
   <table>
-    {{ range .Site.RegularPages.ByPublishDate.Reverse }}
+    {{ range .Pages.ByLastmod.Reverse }}
     <tr>
       <td class="post-date-time date-time-font">
-        <time>{{ .Date.Format (.Site.Params.dateform | default "Jan 02 2006") }}</time>
+  	  <time>{{ .Date.Format (.Site.Params.datefrom | default "Jan 02 2006") }}</time>
       </td>
       <td class="post">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+  	  <a href="{{ .Permalink }}">{{ .Title }}</a>
       </td>
     </tr>
     {{ end }}
